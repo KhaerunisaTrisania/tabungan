@@ -5,6 +5,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\penarikanController;
 use App\Http\Controllers\pencatatanController;
+use App\Http\Controllers\dataAnggotaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::resource('/penarikan',penarikanController::class);
 Route::resource('/pencatatan',pencatatanController::class);
 Route::get('/dashboard',[dashboardController::class,'index']);
 Route::get('/login',[loginController::class,'index']);
+Route::resource('/dataanggota',dataAnggotaController::class);

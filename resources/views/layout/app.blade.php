@@ -39,6 +39,14 @@
               list-group-item list-group-item-action list-group-item-light
               p-3
             "
+            href="/dataanggota"
+            >Data anggota</a
+          >
+          <a
+            class="
+              list-group-item list-group-item-action list-group-item-light
+              p-3
+            "
             href="/pencatatan"
             >Pencatatan</a
           >
