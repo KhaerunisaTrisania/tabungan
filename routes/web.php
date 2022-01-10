@@ -19,11 +19,11 @@ use App\Http\Controllers\dataAnggotaController;
 */
 
 Route::get('/', function () {
-    return view('layout.app');
+    return redirect('/login');
 });
 
-Route::resource('/penarikan',penarikanController::class);
-Route::resource('/pencatatan',pencatatanController::class);
-Route::get('/dashboard',[dashboardController::class,'index']);
-Route::get('/login',[loginController::class,'index']);
-Route::resource('/dataanggota',dataAnggotaController::class);
+Route::resource('/penarikan',penarikanController::class)->middleware('auth');
+Route::resource('/pencatatan',pencatatanController::class)->middleware('auth');
+Route::get('/dashboard',[dashboardController::class,'index'])->middleware('auth');
+Route::get('/login',[loginController::class,'index'])->name('login');
+Route::resource('/dataanggota',dataAnggotaController::class)->middleware('auth');
