@@ -25,6 +25,7 @@
       <!-- Page content wrapper-->
      
         <!-- Page content-->
+        
         <div class="container-fluid">
           <section class="vh-100" style="background-color: #508bfc;">
             <div class="container py-5 h-100">
@@ -34,13 +35,14 @@
                     <div class="card-body p-5 text-center">
           
                       <h3 class="mb-5">Sign in</h3>
-          
+                      <form action="{{ route('postlogin') }}" method="post">
+                        {{ csrf_field() }}
                       <div class="form-outline mb-4">
-                        <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Username"/>
+                        <input type="text" name='username' id="typeEmailX-2" class="form-control form-control-lg" placeholder="username"/>
                       </div>
           
                       <div class="form-outline mb-4">
-                        <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password"/>
+                        <input type="password" name='password' id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password"/>
                       </div>
           
                       <!-- Checkbox -->

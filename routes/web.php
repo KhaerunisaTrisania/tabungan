@@ -26,4 +26,5 @@ Route::resource('/penarikan',penarikanController::class)->middleware('auth');
 Route::resource('/pencatatan',pencatatanController::class)->middleware('auth');
 Route::get('/dashboard',[dashboardController::class,'index'])->middleware('auth');
 Route::get('/login',[loginController::class,'index'])->name('login');
+Route::post('/postlogin',[loginController::class,'auth'])->name('postlogin');
 Route::resource('/dataanggota',dataAnggotaController::class)->middleware('auth');
