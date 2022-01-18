@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataAnggota;
 use Illuminate\Http\Request;
 
 class dataAnggotaController extends Controller
@@ -13,7 +14,8 @@ class dataAnggotaController extends Controller
      */
     public function index()
     {
-        return view('dataanggota.index');
+        $anggotas = DataAnggota::all(); //ambil data anggota
+        return view('dataanggota.index',compact('anggotas')); //variabel dikirim ke tampilan yg tadi
     }
 
     /**
@@ -23,7 +25,7 @@ class dataAnggotaController extends Controller
      */
     public function create()
     {
-        //
+        return view('dataanggota.create');
     }
 
     /**
@@ -56,7 +58,8 @@ class dataAnggotaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $anggota = DataAnggota::find($id);
+        return view('dataanggota.edit',compact('anggota'));
     }
 
     /**
@@ -79,6 +82,8 @@ class dataAnggotaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $anggota = DataAnggota::find($id);
+        $anggota->delete();
+        return redirect('/dataanggota');
     }
 }
