@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DataAnggota extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nik', 'nama', 'alamat', 'no_hp'
+    ];
 }

@@ -14,12 +14,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
-        User::create([
-        'name' => 'Admin Aplikasi',
-        'email' => 'admin@admin.com',
-        'password' => bcrypt('12345'),
-        
-        ]);
+       
     }
 }

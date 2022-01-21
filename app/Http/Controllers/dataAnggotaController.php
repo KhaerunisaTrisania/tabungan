@@ -15,7 +15,7 @@ class dataAnggotaController extends Controller
     public function index()
     {
         $anggotas = DataAnggota::all(); //ambil data anggota
-        return view('dataanggota.index',compact('anggotas')); //variabel dikirim ke tampilan yg tadi
+        return view('dataanggota.index', compact('anggotas')); //variabel dikirim ke tampilan yg tadi
     }
 
     /**
@@ -36,7 +36,15 @@ class dataAnggotaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nik' => 'required|max:16',
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_hp' => 'required',
+        ]);
+
+        DataAnggota::create($request->all());
+        return redirect('/dataanggota')->with('success', 'Data Anggota Berhasil ditambahkan');
     }
 
     /**
@@ -59,7 +67,7 @@ class dataAnggotaController extends Controller
     public function edit($id)
     {
         $anggota = DataAnggota::find($id);
-        return view('dataanggota.edit',compact('anggota'));
+        return view('dataanggota.edit', compact('anggota'));
     }
 
     /**
@@ -71,7 +79,16 @@ class dataAnggotaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $anggota = DataAnggota::find($id);
+        $request->validate([
+            'nik' => 'required|max:16',
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_hp' => 'required',
+        ]);
+
+        $anggota->update($request->all());
+        return redirect('/dataanggota')->with('success', 'Data Anggota Berhasil diupdate');
     }
 
     /**
@@ -84,6 +101,6 @@ class dataAnggotaController extends Controller
     {
         $anggota = DataAnggota::find($id);
         $anggota->delete();
-        return redirect('/dataanggota');
+        return redirect('/dataanggota')->with('success', 'Data Anggota berhasil dihapus');
     }
 }
