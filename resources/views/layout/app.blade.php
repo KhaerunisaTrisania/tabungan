@@ -57,8 +57,10 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::User()->username}}</a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#!">Logout</a>
-
+                  <form action="/logout" method="post">
+                    @csrf
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="$(this).closest('form').submit()">Logout</a>
+                  </form>
                 </div>
               </li>
             </ul>
