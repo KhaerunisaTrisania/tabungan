@@ -11,4 +11,9 @@ class DataAnggota extends Model
     protected $fillable = [
         'nik', 'nama', 'alamat', 'no_hp'
     ];
+
+    public function DataTabungan()
+    {
+        return $this->hasOne(DataTabungan::class, 'anggota_id');
+    }
 }

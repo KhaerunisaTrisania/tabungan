@@ -17,7 +17,7 @@ class CreateDataTabungansTable extends Migration
             $table->id();
             $table->foreignId('anggota_id');
             $table->integer('jumlah_tabungan');
-            $table->foreign('anggota_id')->references('id')->on('data_anggotas');
+            $table->foreign('anggota_id')->references('id')->on('data_anggotas')->onDelete('cascade');
             $table->timestamps();
         });
     }
