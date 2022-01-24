@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataAnggota;
+use App\Models\DataTabungan;
 use Illuminate\Http\Request;
 
 class dataAnggotaController extends Controller
@@ -43,7 +44,11 @@ class dataAnggotaController extends Controller
             'no_hp' => 'required',
         ]);
 
-        DataAnggota::create($request->all());
+        $create = DataAnggota::create($request->all());
+        DataTabungan::create([
+            'anggota_id' => $create->id,
+            'jumlah_tabungan' => 0
+        ]);
         return redirect('/dataanggota')->with('success', 'Data Anggota Berhasil ditambahkan');
     }
 
