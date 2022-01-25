@@ -31,6 +31,7 @@ Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/logout', [loginController::class, 'logout'])->name('logout');
 Route::post('/postlogin', [loginController::class, 'auth'])->name('postlogin');
 Route::post('/inputTabungan', [dataTabunganController::class, 'inputTabungan'])->middleware('auth');
+Route::post('/ambilTabungan', [dataTabunganController::class, 'ambilTabungan'])->middleware('auth');
 Route::resource('/dataanggota', dataAnggotaController::class)->middleware('auth');
 Route::resource('/dataTabungan', dataTabunganController::class)->middleware('auth');
 Route::resource('/histori', HistoriController::class)->middleware('auth');

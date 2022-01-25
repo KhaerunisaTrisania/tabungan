@@ -35,16 +35,14 @@
               list-group-item list-group-item-action list-group-item-light
               p-3
             " href="/dataTabungan">Data Tabungan</a>
-        <!-- <a class="
-              list-group-item list-group-item-action list-group-item-light
-              p-3
-            " href="/pencatatan">Pencatatan</a>
         <a class="
               list-group-item list-group-item-action list-group-item-light
               p-3
+            " href="/histori">History</a>
+        <!-- <a class="
+              list-group-item list-group-item-action list-group-item-light
+              p-3
             " href="/penarikan">Penarikan</a> -->
-
-
       </div>
     </div>
     <!-- Page content wrapper-->

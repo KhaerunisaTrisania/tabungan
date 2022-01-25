@@ -18,7 +18,13 @@
         </tr>
     </thead>
     <tbody>
-
+        @foreach($pemasukan as $pemasukan1)
+        <tr>
+            <td witdh="33%">{{$pemasukan1->created_at}}</td>
+            <td witdh="33%">{{$pemasukan1->Anggota->nama}}</td>
+            <td witdh="33%">{{$pemasukan1->jumlah_pemasukan}}</td>
+        </tr>
+        @endforeach
     </tbody>
     <tbody>
     </tbody>
@@ -34,7 +40,13 @@
         </tr>
     </thead>
     <tbody>
-
+        @foreach($penarikan as $penarikan1)
+        <tr>
+            <td witdh="33%">{{$penarikan1->created_at}}</td>
+            <td witdh="33%">{{$penarikan1->Anggota->nama}}</td>
+            <td witdh="33%">{{$penarikan1->jumlah_penarikan}}</td>
+        </tr>
+        @endforeach
     </tbody>
     <tbody>
     </tbody>

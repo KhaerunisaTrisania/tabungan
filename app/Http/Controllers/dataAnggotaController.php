@@ -44,7 +44,9 @@ class dataAnggotaController extends Controller
             'no_hp' => 'required',
         ]);
 
+        //buat data anggota
         $create = DataAnggota::create($request->all());
+        //buat data tabungan
         DataTabungan::create([
             'anggota_id' => $create->id,
             'jumlah_tabungan' => 0
