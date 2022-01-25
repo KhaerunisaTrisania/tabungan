@@ -14,6 +14,6 @@ class HistoryPenarikan extends Model
 
     public function Anggota()
     {
-        return $this->belongsTo(DataAnggota::class, 'anggota_id');
+         return $this->belongsTo(DataAnggota::class, 'anggota_id');
     }
 }
